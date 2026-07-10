@@ -32,10 +32,10 @@
 
 const articles = [
   {
-    nav: 'Our Story',                    // tab label in the masthead
-    kicker: 'chapter one',               // small label above the headline
+    nav: 'The Beginning',                    // tab label in the masthead
+    kicker: 'why have i known you for so long thats insane',               // small label above the headline
     title: 'How It All Started',
-    deck: 'Every good story has a beginning. Ours is my favorite one to tell.',
+    deck: '',
     blocks: [
       {
         type: 'text',
@@ -288,12 +288,12 @@ document.addEventListener('click', (e) => {
 const noBtn = document.getElementById('noBtn');
 const noTaunts = [
   'No',
-  'Nice try 😏',
-  'Nope!',
-  'Too slow!',
-  "Can't catch me",
-  'Still no?',
-  'Persistent, huh 😂',
+  'Why the hell did you click this',
+  'oh youre funny',
+  'wow',
+  'alright jokes over',
+  'seriously',
+  'dude',
   'The other button works',
 ];
 let dodgeCount = 0;
