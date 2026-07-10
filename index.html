@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>For Sanaa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- reusable lily illustrations, referenced elsewhere via <use> -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="lily-icon" viewBox="0 0 100 100">
+      <g fill="currentColor">
+        <path d="M50 50 C40 30 40 8 50 0 C60 8 60 30 50 50 Z"/>
+        <path d="M50 50 C40 30 40 8 50 0 C60 8 60 30 50 50 Z" transform="rotate(72 50 50)"/>
+        <path d="M50 50 C40 30 40 8 50 0 C60 8 60 30 50 50 Z" transform="rotate(144 50 50)"/>
+        <path d="M50 50 C40 30 40 8 50 0 C60 8 60 30 50 50 Z" transform="rotate(216 50 50)"/>
+        <path d="M50 50 C40 30 40 8 50 0 C60 8 60 30 50 50 Z" transform="rotate(288 50 50)"/>
+      </g>
+      <circle cx="50" cy="50" r="4" fill="#f2b134"/>
+    </symbol>
+    <symbol id="lily-hero" viewBox="0 0 100 140">
+      <g fill="currentColor">
+        <path d="M50 40 C40 20 40 -2 50 -10 C60 -2 60 20 50 40 Z"/>
+        <path d="M50 40 C40 20 40 -2 50 -10 C60 -2 60 20 50 40 Z" transform="rotate(72 50 40)"/>
+        <path d="M50 40 C40 20 40 -2 50 -10 C60 -2 60 20 50 40 Z" transform="rotate(144 50 40)"/>
+        <path d="M50 40 C40 20 40 -2 50 -10 C60 -2 60 20 50 40 Z" transform="rotate(216 50 40)"/>
+        <path d="M50 40 C40 20 40 -2 50 -10 C60 -2 60 20 50 40 Z" transform="rotate(288 50 40)"/>
+      </g>
+      <circle cx="50" cy="40" r="4" fill="#f2b134"/>
+      <path d="M50 44 C48 70 52 100 50 130" stroke="#8ea888" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <path d="M50 90 C40 85 30 90 25 100 C35 102 45 98 50 90 Z" fill="#8ea888"/>
+      <path d="M50 105 C60 100 70 105 75 115 C65 117 55 113 50 105 Z" fill="#8ea888"/>
+    </symbol>
+  </svg>
+
+  <!-- floating background lilies, purely decorative -->
+  <div class="bg-lilies" aria-hidden="true">
+    <svg class="lily-bg-icon"><use href="#lily-icon"></use></svg>
+    <svg class="lily-bg-icon"><use href="#lily-icon"></use></svg>
+    <svg class="lily-bg-icon"><use href="#lily-icon"></use></svg>
+    <svg class="lily-bg-icon"><use href="#lily-icon"></use></svg>
+    <svg class="lily-bg-icon"><use href="#lily-icon"></use></svg>
+    <svg class="lily-bg-icon"><use href="#lily-icon"></use></svg>
+  </div>
+
+  <div class="app">
+
+    <!-- dots show which slide we're on, generated in JS to match the number of posts -->
+    <div class="progress-dots" id="progressDots"></div>
+
+    <main class="slides" id="slides">
+
+      <!-- SLIDE: LANDING -->
+      <section class="slide active" data-slide="0">
+        <div class="slide-content">
+          <div class="hero-lily" aria-hidden="true">
+            <svg class="hero-lily-icon" viewBox="0 0 100 140"><use href="#lily-hero"></use></svg>
+          </div>
+          <p class="eyebrow">for Sanaa</p>
+          <h1 class="script-title">Hi Sanaa!</h1>
+          <p class="lead">I made you a little something to read through. It'll only take a minute.</p>
+          <button class="btn btn-primary next-btn">Take a look <span class="arrow">→</span></button>
+        </div>
+      </section>
+
+      <!-- BLOG POSTS: rendered here by js/main.js from the `posts` array.
+           To add a new post later, just add an entry to that array — no HTML editing needed. -->
+      <div id="postsContainer"></div>
+
+      <!-- SLIDE: THE ASK -->
+      <section class="slide" data-slide="last">
+        <div class="slide-content ask-content">
+
+          <div id="askStage">
+            <p class="eyebrow">last thing</p>
+            <h2 class="ask-question">Will you be my girlfriend?</h2>
+            <div class="ask-buttons" id="askButtons">
+              <button class="btn btn-primary btn-yes" id="yesBtn">Yes 🥹</button>
+              <button class="btn btn-outline btn-no" id="noBtn">No</button>
+            </div>
+          </div>
+
+          <div id="celebrateStage" class="celebrate-stage hidden">
+            <h2 class="celebrate-title">yay!! 🎉</h2>
+            <p class="lead">I'm so happy right now. Come here.</p>
+          </div>
+
+          <div class="nav-row nav-row-ask">
+            <button class="btn btn-ghost back-btn">← Back</button>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <canvas id="confettiCanvas"></canvas>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

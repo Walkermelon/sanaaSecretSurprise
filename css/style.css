@@ -1,0 +1,347 @@
+/* ---------- design tokens: pink lily palette ---------- */
+:root {
+  --lily-pink: #e8628f;       /* petal pink — primary accent */
+  --lily-pink-deep: #c2447a;  /* deeper rose — headings, emphasis */
+  --lily-blush: #ffe3ee;      /* pale pink background tint */
+  --lily-cream: #fff9f2;      /* warm base background */
+  --sage: #8ea888;            /* stem / leaf green */
+  --sage-deep: #5f7a5c;       /* deeper green, used sparingly */
+  --gold: #f2b134;            /* stamen gold accent */
+  --text-dark: #3a2e39;
+  --text-soft: #7a6b76;
+  --radius: 20px;
+  --shadow: 0 10px 30px rgba(58, 46, 57, 0.12);
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden; /* each slide is full-screen, no page scrolling */
+}
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  color: var(--text-dark);
+  background: linear-gradient(165deg, var(--lily-cream), var(--lily-blush) 50%, #f3f7ef 100%);
+  -webkit-tap-highlight-color: transparent;
+}
+
+h1, h2, h3 { margin: 0 0 0.4em; }
+
+/* ---------- floating background lilies ---------- */
+.bg-lilies {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.lily-bg-icon {
+  position: absolute;
+  bottom: -12%;
+  width: 26px;
+  height: 26px;
+  opacity: 0.4;
+  animation: float-up linear infinite;
+}
+
+.lily-bg-icon:nth-child(1) { left: 6%;  width: 22px; color: var(--lily-pink);      animation-duration: 16s; animation-delay: 0s; }
+.lily-bg-icon:nth-child(2) { left: 20%; width: 18px; color: var(--sage);           animation-duration: 20s; animation-delay: 2s; }
+.lily-bg-icon:nth-child(3) { left: 40%; width: 24px; color: var(--gold);           animation-duration: 18s; animation-delay: 5s; opacity: 0.3; }
+.lily-bg-icon:nth-child(4) { left: 58%; width: 20px; color: var(--lily-pink-deep); animation-duration: 22s; animation-delay: 1s; }
+.lily-bg-icon:nth-child(5) { left: 76%; width: 28px; color: var(--lily-pink);      animation-duration: 17s; animation-delay: 4s; }
+.lily-bg-icon:nth-child(6) { left: 90%; width: 18px; color: var(--sage);           animation-duration: 21s; animation-delay: 3s; }
+
+@keyframes float-up {
+  0%   { transform: translateY(0) rotate(0deg); opacity: 0; }
+  10%  { opacity: 0.4; }
+  90%  { opacity: 0.25; }
+  100% { transform: translateY(-115vh) rotate(30deg); opacity: 0; }
+}
+
+/* ---------- app shell ---------- */
+.app {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.progress-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 18px 0 6px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(58, 46, 57, 0.15);
+  transition: background 0.3s, transform 0.3s;
+}
+
+.dot.active {
+  background: var(--lily-pink);
+  transform: scale(1.3);
+}
+
+/* ---------- slides ---------- */
+.slides {
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  opacity: 0;
+  transform: translateY(16px);
+  pointer-events: none;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.slide.active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.slide-content {
+  width: 100%;
+  text-align: center;
+  overflow-y: auto;
+  max-height: 100%;
+  padding-bottom: 12px;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--lily-pink-deep);
+  margin: 0 0 8px;
+}
+
+.script-title {
+  font-family: 'Pacifico', cursive;
+  font-size: 2.6rem;
+  font-weight: 400;
+  color: var(--lily-pink-deep);
+}
+
+.lead {
+  color: var(--text-soft);
+  font-size: 1.05rem;
+  line-height: 1.5;
+  margin: 0 0 28px;
+}
+
+/* ---------- hero lily illustration (landing) ---------- */
+.hero-lily {
+  margin: 0 auto 14px;
+  width: 84px;
+}
+
+.hero-lily-icon {
+  width: 100%;
+  height: auto;
+  color: var(--lily-pink);
+}
+
+/* ---------- small lily divider (blog posts) ---------- */
+.lily-divider {
+  width: 24px;
+  height: 24px;
+  color: var(--lily-pink);
+  opacity: 0.55;
+  display: block;
+  margin: 10px auto 18px;
+}
+
+/* ---------- buttons ---------- */
+.btn {
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 14px 28px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn:active { transform: scale(0.96); }
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--lily-pink), var(--lily-pink-deep));
+  color: white;
+  box-shadow: var(--shadow);
+}
+
+.btn-primary:hover { transform: translateY(-2px); }
+
+.btn-ghost {
+  background: transparent;
+  color: var(--text-soft);
+  font-weight: 600;
+}
+
+.btn-outline {
+  background: white;
+  color: var(--text-dark);
+  border: 2px solid rgba(58, 46, 57, 0.12);
+}
+
+.arrow { display: inline-block; transition: transform 0.2s; }
+.btn:hover .arrow { transform: translateX(3px); }
+
+.nav-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 24px;
+}
+
+.nav-row-ask {
+  justify-content: center;
+  margin-top: 32px;
+}
+
+/* ---------- blog posts ---------- */
+.blog-post h2 {
+  font-size: 1.5rem;
+  color: var(--lily-pink-deep);
+}
+
+.blog-text {
+  text-align: left;
+}
+
+.blog-text p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-dark);
+  margin: 0 0 1em;
+}
+
+/* ---------- memories / photos ---------- */
+.photo-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.photo-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.photo-slot {
+  aspect-ratio: 1 / 1;
+  border-radius: var(--radius);
+  background: white;
+  background-size: cover;
+  background-position: center;
+  box-shadow: var(--shadow);
+  border: 2px dashed rgba(58, 46, 57, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.photo-slot::before {
+  content: "📷 add photo";
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  color: var(--text-soft);
+  text-align: center;
+  padding: 8px;
+}
+
+/* once a real background-image is set via inline style, hide the placeholder label */
+.photo-slot[style*="background-image"]::before {
+  content: none;
+}
+
+.photo-caption {
+  font-size: 0.78rem;
+  color: var(--text-soft);
+  text-align: center;
+  margin: 0;
+  line-height: 1.3;
+}
+
+/* ---------- the ask ---------- */
+.ask-content { position: relative; }
+
+.ask-question {
+  font-size: 1.7rem;
+  margin-top: 6px;
+  color: var(--lily-pink-deep);
+}
+
+.ask-buttons {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 28px;
+  min-height: 60px;
+}
+
+.btn-no {
+  position: relative;
+  transition: transform 0.15s ease;
+}
+
+.btn-no.dodging {
+  position: fixed;
+}
+
+.celebrate-stage {
+  padding-top: 10px;
+}
+
+.celebrate-title {
+  font-family: 'Pacifico', cursive;
+  font-size: 2.2rem;
+  font-weight: 400;
+  color: var(--lily-pink-deep);
+}
+
+.hidden { display: none !important; }
+
+/* ---------- confetti canvas ---------- */
+#confettiCanvas {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 50;
+}
+
+/* ---------- small screens ---------- */
+@media (max-width: 360px) {
+  .script-title { font-size: 2.1rem; }
+  .ask-question { font-size: 1.4rem; }
+}
