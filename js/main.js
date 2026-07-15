@@ -219,6 +219,7 @@ const pages = document.querySelectorAll('.page');
 const navLinks = document.querySelectorAll('.nav-link');
 
 function showPage(id) {
+  resetNoButton(); // if the "no" button is mid-chase, put it back home
   pages.forEach((p) => p.classList.toggle('active', p.dataset.page === id));
   navLinks.forEach((l) => l.classList.toggle('active', l.dataset.page === id));
   window.scrollTo({ top: 0, behavior: 'instant' });
@@ -294,7 +295,7 @@ const noTaunts = [
   'alright jokes over',
   'seriously',
   'dude',
-  'The other button works',
+  'the other button works',
 ];
 let dodgeCount = 0;
 
@@ -338,6 +339,18 @@ function dodgeNoButton() {
 }
 
 noBtn.addEventListener('click', dodgeNoButton);
+
+// Called on every tab switch: if the button ran off mid-chase, move it
+// back into its spot next to "Yes" and start the game fresh.
+function resetNoButton() {
+  if (!noBtn.classList.contains('dodging')) return;
+  noBtn.classList.remove('dodging', 'shaking');
+  noBtn.style.left = '';
+  noBtn.style.top = '';
+  noBtn.textContent = 'No';
+  dodgeCount = 0;
+  document.getElementById('askButtons').appendChild(noBtn);
+}
 
 // ---------- the "yes" button ----------
 const yesBtn = document.getElementById('yesBtn');
@@ -420,6 +433,51 @@ function launchConfetti() {
 
   requestAnimationFrame(frame);
 }
+
+// ---------- background music ----------
+// Browsers block sound until the visitor interacts with the page, so
+// the song starts on her very first click/tap anywhere. After that the
+// floating ♪ button is the only thing that pauses or resumes it.
+const music = document.getElementById('bgMusic');
+const musicToggle = document.getElementById('musicToggle');
+music.volume = 0.45;
+
+let musicStarted = false;
+
+function startMusicOnFirstInteraction() {
+  if (musicStarted) return;
+  music
+    .play()
+    .then(() => {
+      musicStarted = true;
+      document.removeEventListener('pointerdown', startMusicOnFirstInteraction);
+    })
+    .catch(() => {}); // no song file yet, or the browser said not yet
+}
+
+document.addEventListener('pointerdown', startMusicOnFirstInteraction);
+
+musicToggle.addEventListener('click', () => {
+  musicStarted = true; // hand over control to the button
+  if (music.paused) {
+    music.play().catch(() => {});
+  } else {
+    music.pause();
+  }
+});
+
+// keep the button's look in sync with whatever the audio is doing
+music.addEventListener('play', () => {
+  musicToggle.classList.add('playing');
+  musicToggle.classList.remove('paused');
+});
+music.addEventListener('pause', () => {
+  musicToggle.classList.remove('playing');
+  musicToggle.classList.add('paused');
+});
+
+// if the song file isn't there (or the path is wrong), hide the button
+music.addEventListener('error', () => musicToggle.classList.add('hidden'));
 
 // ---------- start on the first article ----------
 showPage('0');
