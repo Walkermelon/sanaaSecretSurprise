@@ -201,6 +201,13 @@ h1, h2, h3 { margin: 0; font-family: var(--font-display); }
   padding: 48px 0 24px;
 }
 
+/* make sure floated figures never spill past the end of an article */
+.article::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
 .kicker {
   font-family: var(--font-body);
   font-size: 0.74rem;
@@ -345,12 +352,38 @@ h1, h2, h3 { margin: 0; font-family: var(--font-display); }
   border-radius: 2px;
 }
 
+/* optional figure sizes — set with size: 'medium' | 'small' in main.js */
+.figure-medium {
+  max-width: 440px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.figure-small {
+  max-width: 280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* floated figures — set with align: 'left' | 'right' in main.js.
+   They sit beside the story and the paragraphs wrap around them. */
+.figure-left,
+.figure-right { width: min(46%, 300px); }
+
+.figure-right { float: right; margin: 6px 0 20px 28px; }
+.figure-left  { float: left;  margin: 6px 28px 20px 0; }
+
+/* screenshots tend to be portrait, so floated placeholders are taller */
+.figure-left .figure-placeholder,
+.figure-right .figure-placeholder { aspect-ratio: 3 / 4; }
+
 /* two-up photo row */
 .figure-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 22px;
   margin: 38px 0;
+  clear: both;
 }
 
 .figure-row .figure { margin: 0; }
@@ -358,10 +391,18 @@ h1, h2, h3 { margin: 0; font-family: var(--font-display); }
 
 @media (max-width: 560px) {
   .figure-row { grid-template-columns: 1fr; gap: 30px; }
+
+  /* floated figures go full width on phones */
+  .figure-left,
+  .figure-right { float: none; width: 100%; margin: 34px 0; }
+
+  .figure-left .figure-placeholder,
+  .figure-right .figure-placeholder { aspect-ratio: 3 / 2; }
 }
 
 /* ---------- pull quote ---------- */
 .pull-quote {
+  clear: both;
   margin: 44px auto;
   max-width: 480px;
   text-align: center;
@@ -404,6 +445,7 @@ h1, h2, h3 { margin: 0; font-family: var(--font-display); }
 
 /* ---------- continue-reading link ---------- */
 .continue {
+  clear: both;
   display: flex;
   justify-content: flex-end;
   margin: 46px 0 10px;
