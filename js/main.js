@@ -172,6 +172,9 @@ const articles = [
         type: 'text',
         paragraphs: [
           'At some point during my daily mindless instagram scrolling, I posted a picture of my many hats and head pieces. I will include a picture of this image.',
+          "For some reason, of all my posts, this got Sanaa's attention (I'm not complaining).",
+          'I immediately started physically sweating, because I knew this was my chance to ask her out on an outing.',
+          'I will include the picture of my response to the right.',
         ],
       },
       {
@@ -190,9 +193,6 @@ const articles = [
       {
         type: 'text',
         paragraphs: [
-          "For some reason, of all my posts, this got Sanaa's attention (I'm not complaining).",
-          'I immediately started physically sweating, because I knew this was my chance to ask her out on an outing.',
-          'I will include the picture of my response to the right.',
           "I took her out for Gyros. We talked for hours. I don't think I have ever smiled so much in my life. My face literally hurt.",
           "After we had Gyros, we got Brauhms. We sat and talked and got a little deeper. I don't know what it was, but something in this conversation made it click in my mind, and I truly knew I had deep feelings for Sanaa.",
           'A few days later we went and saw Obsession. I bought us tickets for the second to last row, but I messed up and was sure it was the very last row. We arrived at the movie theater early and I led us to what I thought were our correct seats.',
