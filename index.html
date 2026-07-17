@@ -6,7 +6,7 @@
 <title>My time with Sanaa</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Great+Vibes&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Dancing+Script:wght@500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -70,16 +70,27 @@
           <svg class="rule-lily"><use href="#lily-icon"></use></svg>
           <span class="rule-line"></span>
         </div>
-        <p class="ask-question script reveal"> May I be your boyfriend?</p>
-        <div class="ask-buttons reveal" id="askButtons">
-          <button class="btn btn-yes" id="yesBtn">Yesss!!!</button>
-          <button class="btn btn-no" id="noBtn">No</button>
+
+        <!-- YOUR LEAD-IN: edit the paragraph(s) below. Add more <p> lines
+             if you want. The question stays hidden until she clicks the
+             button underneath. -->
+        <div id="askIntro" class="ask-intro reveal">
+          <p>We have known eachother for almost a decade now. Throughout these years, I have never lost feelings. This moment has been a long time coming.</p>
+          <button class="btn btn-reveal" id="revealBtn">Click this! ♥</button>
+        </div>
+
+        <div id="questionStage" class="question-stage hidden">
+          <p class="ask-question script"> May I be your boyfriend?</p>
+          <div class="ask-buttons" id="askButtons">
+            <button class="btn btn-yes" id="yesBtn">Yesss!!!</button>
+            <button class="btn btn-no" id="noBtn">No</button>
+          </div>
         </div>
       </div>
 
       <div id="celebrateStage" class="celebrate-stage hidden">
         <p class="kicker">this calls for matcha</p>
-        <h2 class="celebrate-title script">She said yes!</h2>
+        <h2 class="celebrate-title script">YAYAYAYAYAY!</h2>
         <p class="celebrate-note">RAHHHHHHHHHHHHHHHHHHHHHHHHHHH</p>
         <div class="celebrate-hearts" aria-hidden="true">
           <span>♥</span><span>♥</span><span>♥</span><span>♥</span><span>♥</span>

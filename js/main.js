@@ -49,18 +49,11 @@ const articles = [
           'I remember 4th grade science class. There was a girl named Sanaa that I thought was the prettiest girl I had ever seen, and I just hadddd to find a way to impress her. This led me to bring my biggest, fastest fidget spinner to class, with hopes that my expert spinning skills would win her over.',
           'One fateful day, after a long dance break to GoNoodle, I whipped out the spinner and showed it to her. To my dismay, she did not seem impressed. I knew I had to keep fighting for her attention.',
           'I then tried Pokemon cards. Sanaa has no interest in Pokemon. Furthermore, they were stolen near christmas. Double Whammy.',
-          'I then tried sports.',
-          'I would go to recess prepared to play like prime Randy Moss in the last 5 minutes of the Super Bowl. Despite my countless touchdowns (probably like 5), I did not seem to win her attention.',
+          'I then tried sports. I would go to recess prepared to play like prime Randy Moss in the last 5 minutes of the Super Bowl. Despite my countless touchdowns (probably like 5), I did not seem to win her attention.',
           'The pacer test was my final option. I remember being physically nervous on the day of the pacer test. I had to show out.',
-          'I began to seem cooler and cooler with every beep from the pacer machine, and every person that dropped out - I was LIVING for this.',
+          'I began to seem cooler and cooler with every beep from the pacer machine - I was LIVING for this.',
           'Finally, I got the perfect angle during lap 58 of the test to look Sanaa in the eyes. In the brief 3 seconds we made eye contact, she smiled. Genuinely, that made my year.',
         ],
-      },
-      {
-        type: 'image',
-        src: '',
-        caption: 'A photo can go anywhere in the story — or delete this block.',
-        size: 'medium',
       },
       {
         type: 'text',
@@ -69,6 +62,12 @@ const articles = [
           'Near the end of the school year my mom informed me that I would not be returning to River Trails the following year. This crushed my heart, as I would not get to make awkward approaches at Sanaa anymore.',
           "After countless more interactions that I'm sure my brain erased from my memory for my own sanity, the final day of school arrived. Our teacher lined us up to bring us to the front, and as we were walking down the stairs, Sanaa gave me a hug. My life was complete. Unfortunately, between my embarrassing hug and my parents picking me up, I never asked her for her phone number.",
         ],
+      },
+      {
+        type: 'image',
+        src: 'assets/images/image3.jpeg',
+        caption: 'The Sanaa I knew when I was younger :D',
+        size: 'small',
       },
     ],
   },
@@ -86,24 +85,24 @@ const articles = [
           'I went on a stalking spree.',
           'Lucky for me I had just downloaded instagram regardless of my parents countless discussions about the trouble I would get in for having it.',
           'I immediately searched “Sanaa Washington,” and of course, her handle is literally sanaawashington_',
+          "I sent her a message that said something along the lines of “Hi!! I don't know if you remember me but I'm Walker, we went to River Trails together!!”",
+          'A day goes by… no response',
+          '2 days…',
+          '3 days…',
         ],
       },
       {
         type: 'image',
-        src: '',
-        caption: 'The DM, preserved for the historical record.',
+        src: 'assets/images/image2.jpeg',
+        caption: 'Her and Brooklyn!!',
         align: 'right',
         size: 'small',
       },
       {
         type: 'text',
         paragraphs: [
-          "I sent her a message that said something along the lines of “Hi!! I don't know if you remember me but I'm Walker, we went to River Trails together!!”",
-          'A day goes by… no response',
-          '2 days…',
-          '3 days…',
-          'Finally I caved, and texted her cousin Brooklyn, who I knew for a fact Sanaa was in close contact with.',
-          "I politely asked her to notify Sanaa of my presence in her DM's, which Brooklyn did, and I will be forever grateful for.",
+          
+          "Finally I caved, and texted her cousin Brooklyn, who I knew for a fact Sanaa was in close contact with. I politely asked her to notify Sanaa of my presence in her DM's, which Brooklyn did, and I will be forever grateful for.",
           'Me and Sanaa caught up about life, and at some point I mentioned I still have the bracelet she gave me a few years ago.',
           'This bracelet had become a memento of sorts to me.',
         ],
@@ -125,6 +124,18 @@ const articles = [
           "Near the beginning of this time when me and Sanaa talked, there was a period when I was genuinely convinced me and Sanaa would never work out. Out of frustration and as an attempt to let go, I threw away the beloved bracelet Sanaa had gifted me in 4th grade. I lied and said my mom threw it away, because I didn't want her to be offended, but now you know the truth.",
           'In hindsight, that was a horrible decision and I miss that bracelet everyday. Fortunately for me, my feelings for her were stronger than that, and the destruction of the memento did not hinder me from pursuing her.',
           'During the summer going into senior year, I used all of my strength and dignity to ask Sanaa out to grab some food. Of course, she drove me. This was one of the first times I really got to catch up with her about life.',
+        ],
+      },
+      {
+        type: 'image',
+        src: 'assets/images/image8.jpeg',
+        caption: 'Our little outing to Canes!!',
+        size: 'small',
+        allign: 'right',
+      },
+      {
+        type: 'text',
+        paragraphs: [
           "After that encounter with her we didn't talk much, mostly because I was scared.",
         ],
       },
@@ -140,21 +151,15 @@ const articles = [
         type: 'text',
         paragraphs: [
           "In the summer leading into college, I was surprised to receive an invite to Sanaa's graduation party. On the drive there I was genuinely sweating bullets. I thought I would surely find a way to embarrass myself in front of her and her family.",
-          'When I walked up to the house Sanaa let me in, and I genuinely thought she was the most beautiful woman ever. It had been some time since I had seen her, and I had completely forgotten how pretty she was.',
+          'When I walked up to the house Sanaa let me in, and I genuinely thought she was the most beautiful woman ever. It had been some time since I had seen her, and she was just as pretty as I remembered her.',
           "Something possessed me and I actually made great conversation with her and her family (Especially Nana, we're besties for real).",
           'Sanaa was so kind and sweet and I remember trying so hard to not be awkward in front of her friends. She 100% won me over again on this day.',
           'After the graduation party, I left and all I could think about was her.',
           'The problem was she was going to Texas State and I was going to UT, we both had a huge chapter in our lives coming and I felt it would be unfair to try to rope her into anything at this time. So, once again I bailed.',
           "When college started we stayed in contact and kept up with each other. There was even a period where we “talked” for a while. That was probably the most delightful period of time I had in college. Despite that, we mutually agreed it wasn't a good idea because we had a lot of commitments. That genuinely broke my heart.",
-          'Later in the semester Sanaa came to Austin to visit me. When I tell you, I was sh*ting bricks. I showed her around the campus then we sat down and studied on the rooftop of the WCP.',
-          "When I tell you, she looked so beautiful I mean it. The sun was setting and it was reflecting on her face perfectly. I should've taken a picture.",
+          'Later in the semester Sanaa came to Austin to visit me. When I tell you, I was pooping bricks. I showed her around the campus then we sat down and studied on the rooftop of the WCP.',
+          "She looked so beautiful. The sun was setting and it was reflecting on her face perfectly. I should've taken a picture.",
         ],
-      },
-      {
-        type: 'image',
-        src: '',
-        caption: 'No picture exists of that sunset — so this space is reserved for the next one.',
-        size: 'medium',
       },
     ],
   },
@@ -172,13 +177,13 @@ const articles = [
       },
       {
         type: 'image',
-        src: '',
+        src: 'assets/images/image6.png',
         caption: 'The hat post in question.',
-        size: 'medium',
+        size: 'small',
       },
       {
         type: 'image',
-        src: '',
+        src: 'assets/images/image0.png',
         caption: 'My response, included to the right as promised.',
         align: 'right',
         size: 'small',
@@ -186,9 +191,34 @@ const articles = [
       {
         type: 'text',
         paragraphs: [
-          "For some reason, of all my posts, this got Sanaa's attention (I'm not complaining). She said “I want the wig”",
+          "For some reason, of all my posts, this got Sanaa's attention (I'm not complaining).",
           'I immediately started physically sweating, because I knew this was my chance to ask her out on an outing.',
           'I will include the picture of my response to the right.',
+          "I took her out for Gyros. We talked for hours. I don't think I have ever smiled so much in my life. My face literally hurt.",
+          "After we had Gyros, we got Brauhms. We sat and talked and got a little deeper. I don't know what it was, but something in this conversation made it click in my mind, and I truly knew I had deep feelings for Sanaa.",
+          'A few days later we went and saw Obsession. I bought us tickets for the last second to last row, but I messed up and was sure it was the very last row. We arrived at the movie theater early and I led us to what I thought were our correct seats.',
+          'Then, someone made us scoot over because “we were in their seats”',
+          'Then another person made us scoot again.',
+          'Then again.',
+          'Then again.',
+          'I am not kidding, I will highlight all the seats we gradually moved through.',
+        ],
+      },
+      {
+        type: 'image',
+        src: 'assets/images/seat-migration.png',
+        caption: 'The great seat migration, highlighted as promised.',
+        size: 'small',
+      },
+      {
+        type: 'text',
+        paragraphs: [
+          "It was humiliating, and I could feel Sanaa's anger the entire movie, but I couldn't help but laugh.",
+          'As we walked out of the theater Sanaa gave me an earful about her embarrassment.',
+          'In an attempt to cheer her up, I handed her her first (of many) flowers.',
+          'She smiled beautifully and stopped getting on to me.',
+          'That was one of the funniest nights of my life.',
+          'We have gone on many dates since then, and my feelings for her have only grown stronger. When she is now reading this, we should have just finished eating dinner at a restaurant of HER CHOOSING, and if all goes correctly, be in front of River Trails.',
         ],
       },
     ],
@@ -202,18 +232,31 @@ const articles = [
       {
         type: 'text',
         paragraphs: [
-          "This section is still being written — put the 'what I love about her' part here. It's the last thing she reads before the final tab, so it can be short, as long as it's honest.",
+          "To start, Sanaa has the most beautiful smile ever. Everytime she laughs I genuinely get butterflies. Sometimes she does this thing when we're in a social setting when we both pick up on a reference where we side eye each other and grin. I would go to war and fight for those moments.",
+          'She is so kind. She speaks to people around her with such kindness that I often see the other person smile just from a simple interaction. She listens and cares like no one I have ever met.',
+          "She feels things so deeply. I once told her about the passing of my Step-Step Great Grandmother, and she started to tear up at a restaurant. She cares about everything I say, and truly has emotional reactions to my stories. She hates this about herself, but I think it's insanely admirable and I love it.",
+          'She is outgoing. She could literally talk to a brick wall. This is amazing for me, because I could also talk to a brick wall. We just talk and talk like two peas in a pod.',
+          "She is genuinely interesting! There are so many small things she has/says/does that make her unique. Did you know her toilet lights up like a disco ball? She even poops with the lights off. She has poop parties. That's hilarious. She also is really good at track, but is too humble to admit how good she is. To top it all off, she is obsessed with Minions. Yes, the yellow creatures. I love these little things about her.",
+          "Finally, she is beautiful. Even when she's not all dressed up, I can't help but admire how breathtaking she is.",
         ],
       },
       {
         type: 'quote',
-        text: 'One line that sums her up goes here.',
+        text: 'These are just a few of the things I love about her.',
       },
       {
         type: 'imageRow',
         images: [
-          { src: '', caption: 'A favorite picture of her' },
-          { src: '', caption: 'And one more' },
+          { 
+            src: 'assets/images/image9.jpeg', 
+            caption: 'A favorite picture of her',
+            size: 'small',
+          },
+          { 
+            src: 'assets/images/image1.jpeg', 
+            caption: 'And one more',
+            size: 'small', 
+          },
         ],
       },
     ],
@@ -299,9 +342,9 @@ articles.forEach((article, i) => {
   section.dataset.page = String(i);
   section.innerHTML = `
     <article class="article">
-      <p class="kicker reveal">${article.kicker}</p>
+      ${article.kicker ? `<p class="kicker reveal">${article.kicker}</p>` : ''}
       <h2 class="article-title reveal">${article.title}</h2>
-      <p class="article-deck reveal">${article.deck}</p>
+      ${article.deck ? `<p class="article-deck reveal">${article.deck}</p>` : ''}
       <div class="rule-fancy reveal" aria-hidden="true">
         <span class="rule-line"></span>
         <svg class="rule-lily"><use href="#lily-icon"></use></svg>
@@ -385,6 +428,21 @@ document.addEventListener('click', (e) => {
   heart.addEventListener('animationend', () => heart.remove());
 });
 
+// ---------- revealing the question ----------
+// The lead-in paragraph and its button fade out, then the question
+// (hidden until now) pops in.
+const revealBtn = document.getElementById('revealBtn');
+const askIntro = document.getElementById('askIntro');
+const questionStage = document.getElementById('questionStage');
+
+revealBtn.addEventListener('click', () => {
+  askIntro.classList.add('fading');
+  setTimeout(() => {
+    askIntro.classList.add('hidden');
+    questionStage.classList.remove('hidden');
+  }, 360);
+});
+
 // ---------- the runaway "no" button ----------
 // It behaves like a normal button until she actually clicks it — then
 // it glides to a random spot on screen (the CSS transition on left/top
@@ -403,7 +461,7 @@ const noTaunts = [
 let dodgeCount = 0;
 
 function dodgeNoButton() {
-  const rect = noBtn.getBoundingClientRect();
+  const startRect = noBtn.getBoundingClientRect();
 
   if (!noBtn.classList.contains('dodging')) {
     // first click: freeze it at its current spot, then let the
@@ -411,13 +469,19 @@ function dodgeNoButton() {
     // It must live directly under <body> while position:fixed — the
     // page's slide-in animation leaves a transform on the article
     // section, which would otherwise hijack the fixed coordinates.
-    noBtn.style.left = `${rect.left}px`;
-    noBtn.style.top = `${rect.top}px`;
+    noBtn.style.left = `${startRect.left}px`;
+    noBtn.style.top = `${startRect.top}px`;
     noBtn.classList.add('dodging');
     document.body.appendChild(noBtn);
     // force the browser to apply the starting position before moving
     noBtn.getBoundingClientRect();
   }
+
+  // swap in the new taunt BEFORE measuring, so the landing spot is
+  // computed with the button's real (possibly wider) size
+  dodgeCount += 1;
+  noBtn.textContent = noTaunts[Math.min(dodgeCount, noTaunts.length - 1)];
+  const rect = noBtn.getBoundingClientRect();
 
   const margin = 24;
   const maxX = window.innerWidth - rect.width - margin;
@@ -436,9 +500,6 @@ function dodgeNoButton() {
   noBtn.classList.remove('shaking');
   noBtn.getBoundingClientRect(); // restart the shake animation
   noBtn.classList.add('shaking');
-
-  dodgeCount += 1;
-  noBtn.textContent = noTaunts[Math.min(dodgeCount, noTaunts.length - 1)];
 }
 
 noBtn.addEventListener('click', dodgeNoButton);
