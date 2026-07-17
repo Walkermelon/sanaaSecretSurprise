@@ -89,6 +89,7 @@ const articles = [
           'A day goes by… no response',
           '2 days…',
           '3 days…',
+          "Finally I caved, and texted her cousin Brooklyn, who I knew for a fact Sanaa was in close contact with. I politely asked her to notify Sanaa of my presence in her DM's, which Brooklyn did, and I will be forever grateful for.",
         ],
       },
       {
@@ -101,8 +102,6 @@ const articles = [
       {
         type: 'text',
         paragraphs: [
-          
-          "Finally I caved, and texted her cousin Brooklyn, who I knew for a fact Sanaa was in close contact with. I politely asked her to notify Sanaa of my presence in her DM's, which Brooklyn did, and I will be forever grateful for.",
           'Me and Sanaa caught up about life, and at some point I mentioned I still have the bracelet she gave me a few years ago.',
           'This bracelet had become a memento of sorts to me.',
         ],
@@ -196,7 +195,7 @@ const articles = [
           'I will include the picture of my response to the right.',
           "I took her out for Gyros. We talked for hours. I don't think I have ever smiled so much in my life. My face literally hurt.",
           "After we had Gyros, we got Brauhms. We sat and talked and got a little deeper. I don't know what it was, but something in this conversation made it click in my mind, and I truly knew I had deep feelings for Sanaa.",
-          'A few days later we went and saw Obsession. I bought us tickets for the last second to last row, but I messed up and was sure it was the very last row. We arrived at the movie theater early and I led us to what I thought were our correct seats.',
+          'A few days later we went and saw Obsession. I bought us tickets for the second to last row, but I messed up and was sure it was the very last row. We arrived at the movie theater early and I led us to what I thought were our correct seats.',
           'Then, someone made us scoot over because “we were in their seats”',
           'Then another person made us scoot again.',
           'Then again.',
