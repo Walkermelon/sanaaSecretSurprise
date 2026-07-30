@@ -1,20 +1,37 @@
 // =====================================================================
 // FOR SANAA
 // ---------------------------------------------------------------------
-// ALL OF YOUR WRITING LIVES IN THE `articles` ARRAY BELOW.
+// This file holds everything on the site, in two parts:
 //
-// This site is built to grow with you two. Each entry in the array
-// becomes its own tab in the nav — to add a new page later (an
-// anniversary, a trip, whatever), just copy one of the entries below,
-// give it a new `nav` label, and write. The nav, the page, and the
-// "continue reading" links all update themselves.
+//   1. `memories`        — the ongoing journal. THIS IS WHAT SHE SEES
+//                          FIRST when she opens the site.
+//   2. `proposalChapters`— the original proposal story, archived under
+//                          "The Proposal ♥" so she can relive it anytime.
 //
-// Within a page, content is a list of "blocks", top to bottom, and you
-// can stack as many as you want in any order:
+// ---------------------------------------------------------------------
+// HOW TO ADD A NEW MEMORY
+// ---------------------------------------------------------------------
+// Copy this and paste it at the TOP of the `memories` array (newest
+// first — whatever is first in the list shows up first on her screen):
 //
+//   {
+//     date: 'August 14, 2026',
+//     title: 'The night we tried to make pasta',
+//     blocks: [
+//       { type: 'text', paragraphs: ['...', '...'] },
+//       { type: 'image', src: 'assets/images/pasta.jpg', caption: '...' },
+//     ],
+//   },
+//
+// That's it — the entry shows up on the front page with its date, and
+// gets its own page when she taps it. Nothing else needs changing.
+//
+// ---------------------------------------------------------------------
+// THE BLOCKS YOU CAN USE (in any order, as many as you want)
+// ---------------------------------------------------------------------
 //   { type: 'text',  paragraphs: ['...', '...'] }
 //       Long-form writing. Each string is one paragraph. The very first
-//       text block of an article automatically gets a drop cap.
+//       text block of an entry automatically gets a drop cap.
 //
 //   { type: 'image', src: 'assets/images/photo.jpg', caption: '...' }
 //       A photo with a caption underneath. Drop your photos into
@@ -31,12 +48,63 @@
 //       Two photos side by side (stacks on phones).
 //
 //   { type: 'quote', text: '...', cite: '...' }
-//       A big centered pull quote, like a magazine. `cite` is optional.
+//       A big centered pull quote. `cite` is optional.
 //
-// Nothing else in this file needs to change when you edit content.
+// The first photo in an entry is also used as its thumbnail on the
+// front page. No photo is fine too — the card just shows text.
 // =====================================================================
 
-const articles = [
+const memories = [
+  {
+    date: 'July 17, 2026',
+    title: 'The best day of my life',
+    blocks: [
+      {
+        type: 'text',
+        paragraphs: [
+          'This was the best day of my life.',
+          'I started the day off by spending 2 hours trying to get the perfect assortment of flowers for her. I settled on pink and white as the color scheme, and made sure to throw in some lilies because I know she loves them.',
+          'I drove to her house and presented the flowers. The smile on her face was priceless.',
+          'We then had a lovely meal at Olive garden. The whole time I was nervous about what was coming. I knew she would say yes, but regardless it was terrifying.',
+          "After we had finished eating, I drove her to the River Trails neighborhood. During this adventure she said “uhh Brooklyn’s house is that way,” while pointing down a street I had just passed. I guess she assumed I was trying to surprise her with a visit to her cousin's house, which still makes me giggle because that probably terrified her.",
+          'I finally found the school and parked out front. I said “this is the place we first met!” (obviously)',
+          'I told her I had something to show her, and at this point I’m sure she knew that I was about to ask her.',
+          'I opened my laptop, connected to my hotspot, and showed her the website.',
+          'Not even 3 paragraphs into reading she began to tear up.',
+          'She read very slowly because she couldn’t see, which I thought was very cute.',
+          'She doesn’t know this but I began to tear up at this point as well, but I fought it off because it’d be so ridiculous if we were both crying.',
+          'After about 15 minutes of reading, she got to the final tab and clicked yes to being my girlfriend (THANK GOODNESS)',
+          'The previous day I had gone shopping for gifts and selected 3 gifts I knew she would like. Fugglers, an otter, and a squishy.',
+          'I presented these gifts to her one by one, and she broke down more and more.',
+        ],
+      },
+      {
+        // FILLER PHOTO — put the picture you took that night here.
+        // Just set src to its path, e.g. 'assets/images/that-photo.jpg'
+        type: 'image',
+        src: 'assets/images/image0.jpeg',
+        caption: 'The photo I snapped in that moment.',
+        align: 'right',
+        size: 'small',
+      },
+      {
+        type: 'text',
+        paragraphs: [
+          'In this moment, I felt a deep feeling of appreciation and love that I had never experienced before, so naturally I snapped a photo to savor the moment forever.',
+          'After we collected ourselves we talked for what seemed like an hour.',
+          'We then went home and spent the rest of the night playing chess and watching movies.',
+          'I spend most of my days now thinking about her, and this day lives in the forefront of my memories with her, and it will live there forever.',
+        ],
+      },
+    ],
+  },
+];
+
+// =====================================================================
+// THE ARCHIVE — the original proposal, kept exactly as she first read it
+// =====================================================================
+
+const proposalChapters = [
   {
     nav: 'The Beginning',                    // tab label in the masthead
     kicker: 'why have i known you for so long thats insane',               // small label above the headline
@@ -274,10 +342,9 @@ document.getElementById('mastheadDate').textContent = new Date().toLocaleDateStr
   day: 'numeric',
 });
 
-// ---------- render articles ----------
-const articlesContainer = document.getElementById('articlesContainer');
-const nav = document.getElementById('mastheadNav');
-const finalNavLink = nav.querySelector('[data-page="ask"]');
+// ---------- render ----------
+const memoriesContainer = document.getElementById('memoriesContainer');
+const archiveContainer = document.getElementById('archiveContainer');
 
 function figureHtml(image, rowItem = false) {
   const media = image.src
@@ -315,68 +382,233 @@ function blockHtml(block, isFirstText) {
   }
 }
 
-articles.forEach((article, i) => {
-  // nav tab (inserted before the always-last "One Last Thing" tab)
-  const link = document.createElement('button');
-  link.className = 'nav-link';
-  link.dataset.page = String(i);
-  link.textContent = article.nav;
-  nav.insertBefore(link, finalNavLink);
-
-  // page
-  const nextLabel = i < articles.length - 1 ? articles[i + 1].nav : 'One Last Thing ♥';
-  const nextPage = i < articles.length - 1 ? String(i + 1) : 'ask';
-
+// Turns an entry's blocks into the page body, with a drop cap on the
+// first paragraph.
+function blocksToHtml(blocks) {
   let firstTextUsed = false;
-  const blocksHtml = article.blocks
+  return blocks
     .map((block) => {
       const isFirstText = block.type === 'text' && !firstTextUsed;
       if (isFirstText) firstTextUsed = true;
       return blockHtml(block, isFirstText);
     })
     .join('');
+}
 
+// Grabs the first photo in an entry to use as its thumbnail, and the
+// opening sentences to use as the preview text on the index card.
+function firstImageOf(entry) {
+  for (const block of entry.blocks) {
+    if (block.type === 'image' && block.src) return block.src;
+    if (block.type === 'imageRow') {
+      const found = block.images.find((img) => img.src);
+      if (found) return found.src;
+    }
+  }
+  return '';
+}
+
+function excerptOf(entry, maxLength = 165) {
+  const firstText = entry.blocks.find((b) => b.type === 'text');
+  if (!firstText || !firstText.paragraphs.length) return '';
+  const text = firstText.paragraphs[0];
+  return text.length > maxLength ? `${text.slice(0, maxLength).trimEnd()}…` : text;
+}
+
+function makePage(id, className, innerHtml) {
   const section = document.createElement('section');
-  section.className = 'page';
-  section.dataset.page = String(i);
-  section.innerHTML = `
-    <article class="article">
-      ${article.kicker ? `<p class="kicker reveal">${article.kicker}</p>` : ''}
-      <h2 class="article-title reveal">${article.title}</h2>
-      ${article.deck ? `<p class="article-deck reveal">${article.deck}</p>` : ''}
+  section.className = `page ${className}`;
+  section.dataset.page = id;
+  section.innerHTML = innerHtml;
+  return section;
+}
+
+// ---------- the memories index (her home screen) ----------
+const memoryCards = memories
+  .map((entry, i) => {
+    const thumb = firstImageOf(entry);
+    return `
+      <article class="entry-card reveal" data-goto="memory-${i}" tabindex="0" role="link">
+        ${
+          thumb
+            ? `<div class="entry-thumb"><img src="${thumb}" alt=""></div>`
+            : '<div class="entry-thumb entry-thumb-empty" aria-hidden="true"><svg class="thumb-lily"><use href="#lily-icon"></use></svg></div>'
+        }
+        <div class="entry-body">
+          ${entry.date ? `<p class="entry-date">${entry.date}</p>` : ''}
+          <h3 class="entry-card-title">${entry.title}</h3>
+          <p class="entry-excerpt">${excerptOf(entry)}</p>
+          <span class="entry-read">Read this one <span class="arrow">→</span></span>
+        </div>
+      </article>`;
+  })
+  .join('');
+
+memoriesContainer.appendChild(
+  makePage(
+    'home',
+    'index-page',
+    `
+    <div class="index-head">
+      <p class="kicker reveal">since you said yes</p>
+      <h2 class="index-title reveal">Our Memories</h2>
+      <p class="index-note reveal">Everything we get up to from here. I'll keep adding to it.</p>
       <div class="rule-fancy reveal" aria-hidden="true">
         <span class="rule-line"></span>
         <svg class="rule-lily"><use href="#lily-icon"></use></svg>
         <span class="rule-line"></span>
       </div>
-      ${blocksHtml}
-      <div class="continue reveal">
-        <button class="continue-btn" data-goto="${nextPage}">
-          Continue to “${nextLabel}” <span class="arrow">→</span>
-        </button>
-      </div>
-    </article>`;
-  articlesContainer.appendChild(section);
+    </div>
+    <div class="entry-list">
+      ${memoryCards || '<p class="entry-empty reveal">The first memory is on its way. ♥</p>'}
+    </div>
+    <div class="archive-callout reveal">
+      <p>Want to read how all of this started again?</p>
+      <button class="btn btn-reveal" data-goto="archive">Revisit the proposal ♥</button>
+    </div>`
+  )
+);
+
+// ---------- one page per memory ----------
+memories.forEach((entry, i) => {
+  memoriesContainer.appendChild(
+    makePage(
+      `memory-${i}`,
+      '',
+      `
+      <article class="article">
+        <div class="back-row reveal">
+          <button class="back-link" data-goto="home">← All memories</button>
+        </div>
+        ${entry.date ? `<p class="kicker reveal">${entry.date}</p>` : ''}
+        <h2 class="article-title reveal">${entry.title}</h2>
+        <div class="rule-fancy reveal" aria-hidden="true">
+          <span class="rule-line"></span>
+          <svg class="rule-lily"><use href="#lily-icon"></use></svg>
+          <span class="rule-line"></span>
+        </div>
+        ${blocksToHtml(entry.blocks)}
+        <div class="continue reveal">
+          ${
+            i < memories.length - 1
+              ? `<button class="continue-btn" data-goto="memory-${i + 1}">Older: “${memories[i + 1].title}” <span class="arrow">→</span></button>`
+              : '<button class="continue-btn" data-goto="home">Back to all memories <span class="arrow">→</span></button>'
+          }
+        </div>
+      </article>`
+    )
+  );
 });
 
-// ---------- tab navigation ----------
+// ---------- the proposal archive index ----------
+const chapterCards = proposalChapters
+  .map(
+    (chapter, i) => `
+      <button class="chapter-card reveal" data-goto="chapter-${i}">
+        <span class="chapter-number">${String(i + 1).padStart(2, '0')}</span>
+        <span class="chapter-name">${chapter.title}</span>
+        <span class="arrow">→</span>
+      </button>`
+  )
+  .join('');
+
+archiveContainer.appendChild(
+  makePage(
+    'archive',
+    'index-page',
+    `
+    <div class="index-head">
+      <p class="kicker reveal">the archive</p>
+      <h2 class="index-title reveal">The Proposal</h2>
+      <p class="index-note reveal"></p>
+      <div class="rule-fancy reveal" aria-hidden="true">
+        <span class="rule-line"></span>
+        <svg class="rule-lily"><use href="#lily-icon"></use></svg>
+        <span class="rule-line"></span>
+      </div>
+    </div>
+    <div class="chapter-list">
+      ${chapterCards}
+      <button class="chapter-card chapter-card-final reveal" data-goto="ask">
+        <span class="chapter-number">♥</span>
+        <span class="chapter-name">The question</span>
+        <span class="arrow">→</span>
+      </button>
+    </div>`
+  )
+);
+
+// ---------- one page per archived chapter ----------
+proposalChapters.forEach((chapter, i) => {
+  const isLast = i === proposalChapters.length - 1;
+  const nextLabel = isLast ? 'The question ♥' : proposalChapters[i + 1].title;
+  const nextPage = isLast ? 'ask' : `chapter-${i + 1}`;
+
+  archiveContainer.appendChild(
+    makePage(
+      `chapter-${i}`,
+      '',
+      `
+      <article class="article">
+        <div class="back-row reveal">
+          <button class="back-link" data-goto="archive">← Back to the proposal</button>
+        </div>
+        ${chapter.kicker ? `<p class="kicker reveal">${chapter.kicker}</p>` : ''}
+        <h2 class="article-title reveal">${chapter.title}</h2>
+        ${chapter.deck ? `<p class="article-deck reveal">${chapter.deck}</p>` : ''}
+        <div class="rule-fancy reveal" aria-hidden="true">
+          <span class="rule-line"></span>
+          <svg class="rule-lily"><use href="#lily-icon"></use></svg>
+          <span class="rule-line"></span>
+        </div>
+        ${blocksToHtml(chapter.blocks)}
+        <div class="continue reveal">
+          <button class="continue-btn" data-goto="${nextPage}">
+            Continue to “${nextLabel}” <span class="arrow">→</span>
+          </button>
+        </div>
+      </article>`
+    )
+  );
+});
+
+// ---------- navigation ----------
+// Every page is in the DOM at once; we just toggle which one is active.
 const pages = document.querySelectorAll('.page');
 const navLinks = document.querySelectorAll('.nav-link');
 
+// which top-level nav item should light up for a given page
+function navSectionFor(id) {
+  if (id === 'archive' || id === 'ask' || id.startsWith('chapter-')) return 'archive';
+  return 'home';
+}
+
 function showPage(id) {
   resetNoButton(); // if the "no" button is mid-chase, put it back home
+  if (id === 'ask') resetAskPage(); // let her replay the proposal
   pages.forEach((p) => p.classList.toggle('active', p.dataset.page === id));
-  navLinks.forEach((l) => l.classList.toggle('active', l.dataset.page === id));
+  const section = navSectionFor(id);
+  navLinks.forEach((l) => l.classList.toggle('active', l.dataset.page === section));
   window.scrollTo({ top: 0, behavior: 'instant' });
   observeReveals(); // new page's blocks need watching
 }
 
-navLinks.forEach((link) => {
-  link.addEventListener('click', () => showPage(link.dataset.page));
+// One listener on the whole page: anything with data-goto navigates.
+// This covers nav links, cards, back links and continue buttons —
+// including ones rendered later.
+document.addEventListener('click', (e) => {
+  const target = e.target.closest('[data-goto], .nav-link');
+  if (!target) return;
+  showPage(target.dataset.goto || target.dataset.page);
 });
 
-document.querySelectorAll('.continue-btn').forEach((btn) => {
-  btn.addEventListener('click', () => showPage(btn.dataset.goto));
+// memory cards are keyboard-reachable too
+document.addEventListener('keydown', (e) => {
+  if (e.key !== 'Enter' && e.key !== ' ') return;
+  const card = e.target.closest('.entry-card');
+  if (!card) return;
+  e.preventDefault();
+  showPage(card.dataset.goto);
 });
 
 // ---------- scroll-reveal animations ----------
@@ -441,6 +673,16 @@ revealBtn.addEventListener('click', () => {
     questionStage.classList.remove('hidden');
   }, 360);
 });
+
+// Rewind the whole proposal every time she opens that page, so it can
+// be replayed from the top instead of being stuck on the celebration.
+function resetAskPage() {
+  askStage.classList.remove('hidden');
+  askIntro.classList.remove('hidden', 'fading');
+  questionStage.classList.add('hidden');
+  celebrateStage.classList.add('hidden');
+  noBtn.classList.remove('hidden');
+}
 
 // ---------- the runaway "no" button ----------
 // It behaves like a normal button until she actually clicks it — then
@@ -642,5 +884,5 @@ music.addEventListener('pause', () => {
 // if the song file isn't there (or the path is wrong), hide the button
 music.addEventListener('error', () => musicToggle.classList.add('hidden'));
 
-// ---------- start on the first article ----------
-showPage('0');
+// ---------- open on the memories index ----------
+showPage('home');
