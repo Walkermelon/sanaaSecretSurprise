@@ -56,6 +56,33 @@
 
 const memories = [
   {
+    date: 'October 2, 2026',
+    title: 'The Start of College',
+    blocks: [
+      {
+        type: 'text',
+        paragraphs: [
+          'It is October 2nd as I am writing this, and Sanaa and I are en route to our 3-month anniversary, which is a 4th of a year together, and a 40th of a decade together!',
+          "Since my last edition of this blog, me and Sanaa's relationship has consisted of 40-minute car rides back and forth between San Marcos and Austin. We have spent almost every weekend together, and I have valued every moment. There is nothing I like doing more than spending my weekends watching movies with her, even if my friends seem to be half-jealous (cough David).",
+          'Although I see her almost every week, I still get nervous looking at her. There is always a brief 60-second period of pure anxious sweating between the moment of me receiving the “Here” text and walking out the Moore-Hill doors to see my elegant girlfriend waiting in her car for me.',
+          'Due to the stress of school, birthdays, track, band, and jobs, our 3-month relationship has genuinely felt like 6 months. The truth is, we have had our bumps in the road throughout these simulated 6 months. I believe this is a blessing in disguise, because our persistence in committing to the relationship through these trials has only deepened my love for her.',
+          'This is a good segue into my next point: Birthdays!!!!!!',
+          "August 27th was Sanaa's birthday. This day was so much fun! She hosted a birthday bash at her house and invited all her friends. Although I did not get to speak with her much that night, as she was preoccupied with her friends, I thoroughly enjoyed meeting with everyone! Granted, I also spent part of the night making sure the party went somewhat smoothly, but even that was kind of enjoyable! Her friends are all truly so kind, and I believe this is a reflection of Sanaa directly. The entire night, her eyes were lit up like the moon. She was whipping around her apartment, doing her usual people-pleaser routine of making sure everyone was enjoying themselves, and of course everyone was. Each conversation she had was filled with laughter, and the entire night I was overwhelmed with admiration for her because of this. That night reinforced, and was a testament to why I love her.",
+          'About 2 weeks later, my birthday arrived, and it went beautifully because Sanaa was there.',
+          'As I am sitting here writing this, I am overwhelmed with a feeling of emotional safety and love. I look around her apartment and see traces of our relationship, sitting there so casually. A picture of us on the way, the moodang I gifted her over a year ago, the whiplash poster, the Echo Dot that periodically displays pictures of us, the whiteboard that has a love message on it, and of course the ambient lights that are hung so unevenly. These little things remind me how much I love her.',
+        ],
+      },
+      {
+        // TWO PHOTO SLOTS — set each src to a file in assets/images/
+        type: 'imageRow',
+        images: [
+          { src: 'image11.jpeg', caption: 'Terry Black! (On Meme and Papa <3)' },
+          { src: 'image10.jpeg', caption: 'Birthday shot :O' },
+        ],
+      },
+    ],
+  },
+  {
     date: 'July 17, 2026',
     title: 'The best day of my life',
     blocks: [
