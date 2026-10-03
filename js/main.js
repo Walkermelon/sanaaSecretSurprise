@@ -76,8 +76,8 @@ const memories = [
         // TWO PHOTO SLOTS — set each src to a file in assets/images/
         type: 'imageRow',
         images: [
-          { src: 'image11.jpeg', caption: 'Terry Black! (On Meme and Papa <3)' },
-          { src: 'image10.jpeg', caption: 'Birthday shot :O' },
+          { src: 'assets/images/image11.jpeg', caption: 'Terry Black! (On Meme and Papa <3)' },
+          { src: 'assets/images/image10.jpeg', caption: 'Birthday shot :O' },
         ],
       },
     ],
